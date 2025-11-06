@@ -1,0 +1,29 @@
+try {
+    if (req.user) {
+      return res.status(403).json({
+        success: false,
+        data: [],
+        message: "You must logout before signing up",
+        errors: [],
+      });
+    }
+
+   
+
+
+
+
+    res.status(201).json({
+      success: true,
+      data: token,
+      message: "Account created successfully",
+      errors: [],
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      data: [],
+      message: error.message,
+      errors: [],
+    });
+  }
